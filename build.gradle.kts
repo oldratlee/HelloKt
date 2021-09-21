@@ -15,6 +15,8 @@ repositories {
 }
 
 dependencies {
+    implementation("com.github.ajalt:mordant:1.2.1")
+
     testImplementation(kotlin("test"))
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
