@@ -34,3 +34,12 @@ tasks.withType<KotlinCompile>() {
 application {
     mainClass.set("kt.hello.MainKt")
 }
+
+// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
+// https://stackoverflow.com/questions/51810254/execute-javaexec-task-using-gradle-kotlin-dsl
+task("execTestMain", JavaExec::class) {
+    if (project.hasProperty("mainClass"))
+        mainClass.set(project.properties["mainClass"].toString())
+
+    classpath = sourceSets["test"].runtimeClasspath
+}
