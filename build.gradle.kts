@@ -43,6 +43,14 @@ dependencies {
     implementation("com.google.guava:guava:31.0.1-jre")
     implementation("org.apache.commons:commons-collections4:4.4")
 
+    // https://github.com/hankcs/AhoCorasickDoubleArrayTrie
+    // https://mvnrepository.com/artifact/com.hankcs/aho-corasick-double-array-trie
+    //
+    // PS: AhoCorasickDoubleArrayTrie also is contained in hanlp lib
+    //   https://github.com/hankcs/HanLP
+    //   https://mvnrepository.com/artifact/com.hankcs/hanlp
+    implementation("com.hankcs:hanlp:portable-1.8.2")
+
     // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
