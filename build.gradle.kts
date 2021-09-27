@@ -3,7 +3,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val kotestVersion = "4.6.3"
 
 plugins {
-    kotlin("jvm") version "1.5.30"
+    // variables - How to parametrize Kotlin version in the plugins block of a build.gradle.kts script?
+    // https://stackoverflow.com/questions/60165254
+    // How to get ext.* variables into plugins block in build.gradle.kts
+    // https://stackoverflow.com/questions/46053522/47507441#47507441
+    // Why can't I use val inside Plugins {}?
+    // https://discuss.gradle.org/t/37098
+    // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
+    // https://youtrack.jetbrains.com/issue/KTIJ-19369
+    val kotlinVersion = "1.5.31"
+
+    // https://kotlinlang.org/docs/gradle.html
+    kotlin("jvm") version kotlinVersion
     application
 }
 
