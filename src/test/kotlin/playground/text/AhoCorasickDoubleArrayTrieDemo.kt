@@ -5,7 +5,12 @@ import java.util.*
 import kotlin.system.measureTimeMillis
 
 /**
- * A demo of [AhoCorasickDoubleArrayTrie].
+ * A performance demo of [AhoCorasickDoubleArrayTrie].
+ *
+ * Result
+ * ---------------
+ *
+ * hit search ~O(1) to the size of search dictionary.
  *
  * @see <a href="https://github.com/hankcs/AhoCorasickDoubleArrayTrie>AhoCorasickDoubleArrayTrie github repo</a>
  * @see <a href="https://mvnrepository.com/artifact/com.hankcs/aho-corasick-double-array-trie>Maven Repository: aho-corasick-double-array-trie</a>

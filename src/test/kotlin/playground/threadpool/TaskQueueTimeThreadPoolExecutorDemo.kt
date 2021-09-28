@@ -8,6 +8,11 @@ import java.util.concurrent.TimeUnit
 /**
  * A demo show
  * the queue time of tasks in [ThreadPoolExecutor]
+ *
+ * Result
+ * ---------------
+ *
+ * average queue time = queue size / maximumPoolSize * average task execution time
  */
 fun main() {
     val threadPoolExecutor = ThreadPoolExecutor(

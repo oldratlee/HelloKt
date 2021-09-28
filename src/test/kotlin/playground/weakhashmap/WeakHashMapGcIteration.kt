@@ -5,9 +5,12 @@ import kotlin.random.Random
 
 /**
  * when [WeakHashMap] key is `gc`ed in the [WeakHashMap] iteration,
- * `WeakHashMap` iteration will throw [ConcurrentModificationException]?
+ * [WeakHashMap] iteration will throw [ConcurrentModificationException]?
  *
- * Demo Result: NO.
+ * Result
+ * ---------------
+ *
+ * NO.
  */
 fun main() {
     println(Key(271828)) // this Key 271828 will be GCed soon
