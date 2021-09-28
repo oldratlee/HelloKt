@@ -14,7 +14,7 @@ fun main() {
 
     val (keyList, weakHashMap) = prepareData()
 
-    for (round in (0..2)) {
+    repeat(3) { round ->
         val beginKeyListSize = keyList.size
         val beginWeakHashMapSize = weakHashMap.size
         println("[round $round] begin! keyListSize: $beginKeyListSize, weakHashMapSize: $beginWeakHashMapSize")
