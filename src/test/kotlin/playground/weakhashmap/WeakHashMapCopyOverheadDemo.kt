@@ -59,12 +59,12 @@ private fun now(): String {
 }
 
 /*
------------------------
+-----------------------------------------
 An output
 
 test on my MacBookPro16, Intel Core i9
 copy ~30M items per second.
------------------------
+-----------------------------------------
 
 ====================
 Warmup

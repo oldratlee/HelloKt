@@ -47,9 +47,10 @@ dependencies {
     // https://mvnrepository.com/artifact/com.hankcs/aho-corasick-double-array-trie
     //
     // PS: AhoCorasickDoubleArrayTrie also is contained in hanlp lib
+    //     implementation("com.hankcs:hanlp:portable-1.8.2")
     //   https://github.com/hankcs/HanLP
     //   https://mvnrepository.com/artifact/com.hankcs/hanlp
-    implementation("com.hankcs:hanlp:portable-1.8.2")
+    implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
     // test dependencies
     testImplementation(kotlin("test"))

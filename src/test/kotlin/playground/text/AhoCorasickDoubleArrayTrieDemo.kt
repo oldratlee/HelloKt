@@ -1,15 +1,16 @@
 package playground.text
 
-import com.hankcs.hanlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie
+import com.hankcs.algorithm.AhoCorasickDoubleArrayTrie
 import java.util.*
 import kotlin.system.measureTimeMillis
 
 /**
  * A demo of [AhoCorasickDoubleArrayTrie].
  *
- * @see <https://github.com/hankcs/HanLP>
- * @see <https://github.com/hankcs/AhoCorasickDoubleArrayTrie>
- * @see <https://mvnrepository.com/artifact/com.hankcs/hanlp>
+ * @see <a href="https://github.com/hankcs/AhoCorasickDoubleArrayTrie>AhoCorasickDoubleArrayTrie github repo</a>
+ * @see <a href="https://mvnrepository.com/artifact/com.hankcs/aho-corasick-double-array-trie>Maven Repository: aho-corasick-double-array-trie</a>
+ * @see <a href="https://github.com/hankcs/HanLP>HanLP github repo</a>
+ * @see <a href="https://mvnrepository.com/artifact/com.hankcs/hanlp>Maven Repository: hanlp</a>
  */
 fun main() {
     val dict = sortedMapOf(
@@ -22,16 +23,16 @@ fun main() {
     val text = "1234567890".repeat(1000)
 
     measureTimeMillis {
-        val trie = AhoCorasickDoubleArrayTrie(dict)
-        (0 until 10_000).forEach { _ ->
+        val trie = AhoCorasickDoubleArrayTrie<String>().apply { build(dict) }
+        repeat(10_000) { _ ->
             trie.parseText(text)
         }
     }.let { println("[Warmup] small dict(${dict.size}) time ${it}ms") }
 
-    var trie = AhoCorasickDoubleArrayTrie(dict)
+    var trie = AhoCorasickDoubleArrayTrie<String>().apply { build(dict) }
 
     measureTimeMillis {
-        (0 until 10_000).forEach { _ ->
+        repeat(10_000) { _ ->
             trie.parseText(text)
         }
     }.let {
@@ -39,11 +40,11 @@ fun main() {
         //println("\n\t${trie.parseText(text)}")
     }
 
-    dict.putAll(combined().associateWith { e -> e })
-    trie = AhoCorasickDoubleArrayTrie(dict)
+    dict.putAll(generateKeys().associateWith { e -> e })
+    trie = AhoCorasickDoubleArrayTrie<String>().apply { build(dict) }
 
     measureTimeMillis {
-        (0 until 10_000).forEach { _ ->
+        repeat(10_000) { _ ->
             trie.parseText(text)
         }
     }.let {
@@ -52,7 +53,7 @@ fun main() {
     }
 }
 
-private fun combined(): List<String> {
+private fun generateKeys(): List<String> {
     val ret = mutableListOf<String>()
     ('a'..'z').forEach { c1 ->
         ('a'..'z').forEach { c2 ->
@@ -63,9 +64,11 @@ private fun combined(): List<String> {
 }
 
 /*
----------------
+-----------------------------------------
 An output
----------------
+
+test on my MacBookPro16, Intel Core i9
+-----------------------------------------
 
 [Warmup] small dict(5) time 1375ms
 small dict(5) time 1011ms
