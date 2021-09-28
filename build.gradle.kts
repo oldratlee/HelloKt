@@ -36,6 +36,8 @@ listOf(sourceSets.main, sourceSets.test).forEach {
 }
 
 dependencies {
+    implementation("com.alibaba:transmittable-thread-local:2.12.3")
+
     implementation("io.github.microutils:kotlin-logging:2.1.21")
     testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.17.1")
 
