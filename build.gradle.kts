@@ -12,9 +12,13 @@ plugins {
     // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
     // https://youtrack.jetbrains.com/issue/KTIJ-19369
     val kotlinVersion = "1.5.31"
+    val dokkaVersion = "1.5.30"
 
     // https://kotlinlang.org/docs/gradle.html
     kotlin("jvm") version kotlinVersion
+    // https://kotlinlang.org/docs/kotlin-doc.html
+    // https://github.com/Kotlin/dokka
+    id("org.jetbrains.dokka") version dokkaVersion
     application
 }
 
