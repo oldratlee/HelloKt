@@ -40,6 +40,10 @@ listOf(sourceSets.main, sourceSets.test).forEach {
 dependencies {
     implementation("com.github.ajalt:mordant:1.2.1")
 
+    implementation("com.google.guava:guava:31.0.1-jre")
+    implementation("org.apache.commons:commons-collections4:4.4")
+
+    // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
