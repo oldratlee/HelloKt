@@ -29,6 +29,14 @@ repositories {
     mavenCentral()
 }
 
+// Mixing Kotlin and Java in a project
+// https://subscription.packtpub.com/book/application_development/9781787126367/1/ch01lvl1sec15/mixing-kotlin-and-java-in-a-project
+// Kotlin and Java sources
+// https://www.kotlincn.net/docs/reference/using-gradle.html#kotlin-and-java-sources
+listOf(sourceSets.main, sourceSets.test).forEach {
+    it { java.srcDirs("src/${it.name}/java", "src/${it.name}/kotlin") }
+}
+
 dependencies {
     implementation("com.github.ajalt:mordant:1.2.1")
 
@@ -38,12 +46,15 @@ dependencies {
     testImplementation("io.kotest:kotest-property:$kotestVersion")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 application {
