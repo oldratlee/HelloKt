@@ -40,6 +40,7 @@ dependencies {
     testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.17.0")
 
     implementation("com.github.ajalt:mordant:1.2.1")
+    implementation("org.jline:jline:3.20.0")
 
     implementation("com.google.guava:guava:31.0.1-jre")
     implementation("org.apache.commons:commons-collections4:4.4")
