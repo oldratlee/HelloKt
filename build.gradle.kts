@@ -52,6 +52,9 @@ dependencies {
     //   https://mvnrepository.com/artifact/com.hankcs/hanlp
     implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
+    // https://github.com/6tail/lunar-java
+    implementation("cn.6tail:lunar:1.2.5")
+
     // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
