@@ -1,7 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotestVersion = "4.6.3"
-
 plugins {
     // variables - How to parametrize Kotlin version in the plugins block of a build.gradle.kts script?
     // https://stackoverflow.com/questions/60165254
@@ -11,8 +9,8 @@ plugins {
     // https://discuss.gradle.org/t/37098
     // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
     // https://youtrack.jetbrains.com/issue/KTIJ-19369
-    val kotlinVersion = "1.5.31"
-    val dokkaVersion = "1.5.30"
+    val kotlinVersion = "1.6.10"
+    val dokkaVersion = "1.6.0"
 
     // https://kotlinlang.org/docs/gradle.html
     kotlin("jvm") version kotlinVersion
@@ -53,11 +51,12 @@ dependencies {
     implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
     // https://github.com/6tail/lunar-java
-    implementation("cn.6tail:lunar:1.2.5")
+    implementation("cn.6tail:lunar:1.2.14")
 
     // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
+    val kotestVersion = "5.0.3"
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
