@@ -41,6 +41,7 @@ dependencies {
     implementation("com.github.ajalt:mordant:1.2.1")
 
     testImplementation(kotlin("test"))
+    // https://kotest.io/docs/quickstart
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
@@ -53,7 +54,8 @@ tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.test {
+// https://kotest.io/docs/quickstart
+tasks.test<Test> {
     useJUnitPlatform()
 }
 
