@@ -10,7 +10,7 @@ plugins {
     // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
     // https://youtrack.jetbrains.com/issue/KTIJ-19369
     val kotlinVersion = "1.6.10"
-    val dokkaVersion = "1.6.0"
+    val dokkaVersion = "1.6.10"
 
     // https://kotlinlang.org/docs/gradle.html
     kotlin("jvm") version kotlinVersion
@@ -37,7 +37,7 @@ listOf(sourceSets.main, sourceSets.test).forEach {
 
 dependencies {
     implementation("io.github.microutils:kotlin-logging:2.1.21")
-    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.17.0")
+    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.17.1")
 
     implementation("com.github.ajalt:mordant:1.2.1")
 
@@ -54,7 +54,7 @@ dependencies {
     implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
     // https://github.com/6tail/lunar-java
-    implementation("cn.6tail:lunar:1.2.14")
+    implementation("cn.6tail:lunar:1.2.18")
 
     // test dependencies
     testImplementation(kotlin("test"))
