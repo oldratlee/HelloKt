@@ -1,0 +1,25 @@
+name: CI
+on: [ push, pull_request ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        java: [ 8, 11, 17 ]
+      fail-fast: false
+      max-parallel: 32
+    name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: ${{ matrix.java }}
+          cache: 'gradle'
+      - name: Build with Gradle
+        run: ./gradlew test
