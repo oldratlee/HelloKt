@@ -9,8 +9,8 @@ plugins {
     // https://discuss.gradle.org/t/37098
     // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
     // https://youtrack.jetbrains.com/issue/KTIJ-19369
-    val kotlinVersion = "1.6.10"
-    val dokkaVersion = "1.6.10"
+    val kotlinVersion = "1.9.10"
+    val dokkaVersion = "1.9.10"
 
     // https://kotlinlang.org/docs/gradle.html
     kotlin("jvm") version kotlinVersion
@@ -36,12 +36,12 @@ listOf(sourceSets.main, sourceSets.test).forEach {
 }
 
 dependencies {
-    implementation("io.github.microutils:kotlin-logging:2.1.21")
-    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.17.1")
+    implementation("io.github.microutils:kotlin-logging:3.0.5")
+    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.21.0")
 
     implementation("com.github.ajalt:mordant:1.2.1")
 
-    implementation("com.google.guava:guava:31.0.1-jre")
+    implementation("com.google.guava:guava:32.1.3-jre")
     implementation("org.apache.commons:commons-collections4:4.4")
 
     // https://github.com/hankcs/AhoCorasickDoubleArrayTrie
@@ -54,12 +54,12 @@ dependencies {
     implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
     // https://github.com/6tail/lunar-java
-    implementation("cn.6tail:lunar:1.2.18")
+    implementation("cn.6tail:lunar:1.6.3")
 
     // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
-    val kotestVersion = "5.0.3"
+    val kotestVersion = "5.7.2"
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
