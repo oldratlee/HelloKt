@@ -59,7 +59,7 @@ dependencies {
     // test dependencies
     testImplementation(kotlin("test"))
     // https://kotest.io/docs/quickstart
-    val kotestVersion = "5.5.5"
+    val kotestVersion = "5.6.0"
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("io.kotest:kotest-property:$kotestVersion")
