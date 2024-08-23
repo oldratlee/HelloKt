@@ -9,7 +9,7 @@ plugins {
     // https://discuss.gradle.org/t/37098
     // False-positive "can't be called in this context by implicit receiver" with plugins in Gradle version catalogs as a TOML file
     // https://youtrack.jetbrains.com/issue/KTIJ-19369
-    val kotlinVersion = "2.0.10"
+    val kotlinVersion = "2.0.20"
     val dokkaVersion = "1.9.20"
 
     // https://kotlinlang.org/docs/gradle.html
