@@ -42,7 +42,7 @@ dependencies {
     implementation("com.github.ajalt:mordant:1.2.1")
 
     implementation("com.google.guava:guava:33.4.8-jre")
-    implementation("org.apache.commons:commons-collections4:4.4")
+    implementation("org.apache.commons:commons-collections4:4.5.0")
 
     // https://github.com/hankcs/AhoCorasickDoubleArrayTrie
     // https://mvnrepository.com/artifact/com.hankcs/aho-corasick-double-array-trie
