@@ -37,7 +37,7 @@ listOf(sourceSets.main, sourceSets.test).forEach {
 
 dependencies {
     implementation("io.github.microutils:kotlin-logging:3.0.5")
-    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.25.1")
+    testRuntimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.25.2")
 
     implementation("com.github.ajalt:mordant:1.2.1")
 
