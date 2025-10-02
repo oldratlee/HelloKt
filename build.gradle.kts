@@ -54,7 +54,7 @@ dependencies {
     implementation("com.hankcs:aho-corasick-double-array-trie:1.2.3")
 
     // https://github.com/6tail/lunar-java
-    implementation("cn.6tail:lunar:1.7.4")
+    implementation("cn.6tail:lunar:1.7.5")
 
     // test dependencies
     testImplementation(kotlin("test"))
